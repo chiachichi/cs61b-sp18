@@ -16,11 +16,12 @@ public class Fib {
         if (n < 2) return n; // 直接定義
         // 迴圈
         int p2 = 0, p1 = 1, temp;
-        for (int i=3; i<=n; i+=1) { // i -> 產出 ith fib number
+        for (int i=0; i<n-2; i+=1) { // i -> 指標移動幾次，總共要移動n-2次
+            // 移動指標
             temp = p1;
             p1 = p2 + p1;
             p2 = temp;
-        } // 得到(n-2)th and (n-1)th fib number
+        } // 得到fib(n-2)、fib(n-1)
         return p2 + p1;
     }
     // // array method：時間複雜度 O(n)；空間複雜度 O(n)
